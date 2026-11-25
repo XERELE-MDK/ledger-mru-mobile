@@ -1,0 +1,13 @@
+.dart_tool/
+.flutter-plugins-dependencies
+.metadata.bak
+/build/
+/dist/
+*.log
+*.iml
+.idea/
+android/.kotlin/
+# Never publish signing material
+key.properties
+*.jks
+*.keystore
