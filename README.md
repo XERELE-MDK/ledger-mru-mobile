@@ -1,36 +1,82 @@
-# Ledger MRU — Mobile (Android)
+# Ledger MRU — Android
 
 [![CI](https://github.com/XERELE-MDK/ledger-mru-mobile/actions/workflows/ci.yml/badge.svg)](https://github.com/XERELE-MDK/ledger-mru-mobile/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/XERELE-MDK/ledger-mru-mobile)](https://github.com/XERELE-MDK/ledger-mru-mobile/releases/latest)
+[![Licence: GPL-3.0](https://img.shields.io/badge/licence-GPL--3.0-blue)](LICENSE)
 
-Comptabilité personnelle en ouguiya (MRU) pour **Android 7.0 et plus**. Aucun compte, aucun serveur, et **aucune permission Internet**.
+**Personal bookkeeping in Mauritanian ouguiya (MRU), on your phone.** Real double-entry accounting behind a Simple mode. Android 7.0 or newer.
 
-| Dépôt | Contenu | Pour |
+No account, no server, and **no Internet permission**: the app cannot send your data anywhere.
+
+<p>
+  <img src="https://raw.githubusercontent.com/XERELE-MDK/ledger-mru-flutter/main/docs/images/overview.png" width="180" alt="Overview home screen">
+  <img src="https://raw.githubusercontent.com/XERELE-MDK/ledger-mru-flutter/main/docs/images/editorial.png" width="180" alt="Editorial home screen">
+  <img src="https://raw.githubusercontent.com/XERELE-MDK/ledger-mru-flutter/main/docs/images/pebbles.png" width="180" alt="Pebbles home screen">
+  <img src="https://raw.githubusercontent.com/XERELE-MDK/ledger-mru-flutter/main/docs/images/opening-balances.png" width="180" alt="Opening balances">
+</p>
+
+## Download
+
+[**Latest release**](https://github.com/XERELE-MDK/ledger-mru-mobile/releases/latest):
+
+| APK | For |
+|---|---|
+| `…-android-arm64-v8a.apk` | **almost every phone since 2017 — take this one** |
+| `…-android-armeabi-v7a.apk` | older 32-bit phones |
+| `…-android-x86_64.apk` | emulators, Chromebooks |
+| `…-android-universal.apk` | all three in one, larger |
+
+Open the APK on the phone and allow installing from your browser or file manager. Check a download: `sha256sum -c SHA256SUMS --ignore-missing`.
+
+⚠️ The universal APK cannot be installed **over** a per-processor one. Export your data before switching.
+
+## What you get
+
+- **Simple or Accountant mode**: say "Expense, 300, taxi, cash" or pick the debit and credit yourself.
+- **Journal, Ledger, Reports**: the month by day, one account with its running balance, trial balance, 6-month comparison, budgets.
+- **Opening balances**, **monthly budgets**, **demo data** to try before starting clean.
+- **4 home screens**: Overview, Editorial, T-account, Pebbles.
+- **6 themes**: Organic (light / dark), Cappuccino, AMOLED Black, Arctic, Sahara, Sakura — each with its own fonts.
+- **3 languages**: English, Français, 日本語 — amounts and dates follow.
+- **Sync** with your PC through a folder shared by [Syncthing](https://syncthing.net), no server.
+- **Import / export** of the whole book as JSON.
+
+Every feature is documented in [ledger-mru-flutter/docs](https://github.com/XERELE-MDK/ledger-mru-flutter/tree/main/docs#documentation), where the code lives.
+
+## Privacy
+
+| | |
+|---|---|
+| Network | none: the release APK declares **no permission at all**, and CI checks it |
+| Account, ads, analytics | none |
+| Where data lives | the app's private storage, plain JSON; plus the export file and sync folder you choose |
+| Backup | Android may include the data in your Google backup if you turned it on |
+
+## The Ledger MRU family
+
+| Repository | What | For |
 |---|---|---|
-| [ledger-mru-rust](https://github.com/XERELE-MDK/ledger-mru-rust) | Rust + Slint | PC Linux, léger (~25 Mio de mémoire) |
-| [ledger-mru-flutter](https://github.com/XERELE-MDK/ledger-mru-flutter) | Dart : écrans, logique, tests, version Linux | PC Linux, même app que le téléphone |
-| [ledger-mru-mobile](https://github.com/XERELE-MDK/ledger-mru-mobile) | projet Android | téléphone |
+| [ledger-mru-mobile](https://github.com/XERELE-MDK/ledger-mru-mobile) (here) | Android project | phone |
+| [ledger-mru-flutter](https://github.com/XERELE-MDK/ledger-mru-flutter) | Dart: screens, logic, tests, Linux build | Linux PC, same app as the phone |
+| [ledger-mru-rust](https://github.com/XERELE-MDK/ledger-mru-rust) | Rust + Slint | Linux PC, lightweight |
 
-Les trois lisent et écrivent **le même fichier JSON** et se synchronisent par un dossier partagé, sans serveur.
+All three read and write **the same JSON file** and sync through a shared folder.
 
-## Documentation
+## How this repository is built
 
-- Les fonctionnalités de l'app : [ledger-mru-flutter/docs](https://github.com/XERELE-MDK/ledger-mru-flutter/tree/main/docs).
-- Ce qui est propre à Android : [**docs/**](docs/README.md) — [code partagé](docs/code-partage/FUNCTIONALITY.md) · [sélecteur de fichiers](docs/selecteur-de-fichiers/FUNCTIONALITY.md) · [dossier partagé](docs/dossier-partage/FUNCTIONALITY.md) · [icône](docs/icone/FUNCTIONALITY.md) · [confidentialité](docs/confidentialite/FUNCTIONALITY.md) · [APK et signature](docs/release/FUNCTIONALITY.md).
-- Versions : [journal](CHANGELOG.md) · [comment elles sont gérées](docs/VERSIONING.md).
-
-## Comment ce dépôt est fait
-
-Le code Dart n'est **pas copié ici** : `app/` est un sous-module git qui pointe vers une version précise de [ledger-mru-flutter](https://github.com/XERELE-MDK/ledger-mru-flutter). `lib`, `test`, `assets` et `pubspec.yaml` sont des liens vers ce sous-module. Ce dépôt n'apporte que `android/`.
+The Dart code is **not copied here**: `app/` is a git submodule pinned to a release of [ledger-mru-flutter](https://github.com/XERELE-MDK/ledger-mru-flutter). `lib`, `test`, `assets` and `pubspec.yaml` are links into it. This repository only adds `android/` (Kotlin channels for the file picker and the shared folder, icon, signing).
 
 ```bash
 git clone --recursive https://github.com/XERELE-MDK/ledger-mru-mobile.git
 cd ledger-mru-mobile
-flutter build apk --release --split-per-abi
+tools/build_apks.sh          # or: flutter build apk --release --split-per-abi
 ```
 
-Sans `--recursive` : `git submodule update --init`. Sous Windows, activer les liens symboliques (`git config core.symlinks true`, mode développeur).
+Without `--recursive`: `git submodule update --init`. On Windows, enable symbolic links (developer mode, `git config core.symlinks true`).
 
-APK prêts à installer : [Releases](https://github.com/XERELE-MDK/ledger-mru-mobile/releases). Presque tous les téléphones : `arm64-v8a`.
+## Documentation
+
+What is specific to Android, in [**docs/**](docs/README.md): [shared code](docs/shared-code/FUNCTIONALITY.md) · [file picker](docs/file-picker/FUNCTIONALITY.md) · [shared folder](docs/shared-folder/FUNCTIONALITY.md) · [icon](docs/icon/FUNCTIONALITY.md) · [privacy](docs/privacy/FUNCTIONALITY.md) · [APKs and signing](docs/release/FUNCTIONALITY.md). Also: [Changelog](CHANGELOG.md) · [Versioning](docs/VERSIONING.md).
 
 ## Licence
 

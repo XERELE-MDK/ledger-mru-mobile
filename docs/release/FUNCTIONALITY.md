@@ -1,14 +1,14 @@
-# APK et signature — fonctionnement
+# APKs and signing — how it works
 
-[← Toutes les fonctionnalités](../README.md) · [Parcours du code](CODE_WALKTHROUGH.md) · [Mise en place](INSTALL.md)
+[← All features](../README.md) · [Code walkthrough](CODE_WALKTHROUGH.md) · [Setup](INSTALL.md)
 
-| APK | Téléphones |
+| APK | Phones |
 |---|---|
-| `arm64-v8a` | presque tous depuis 2017 |
-| `armeabi-v7a` | anciens, 32 bits |
-| `x86_64` | émulateurs, Chromebooks |
-| `universal` | les trois réunis, plus lourd |
+| `arm64-v8a` | almost all since 2017 |
+| `armeabi-v7a` | older, 32-bit |
+| `x86_64` | emulators, Chromebooks |
+| `universal` | all three together, larger |
 
-Android 7.0 minimum.
+Android 7.0 or newer.
 
-⚠️ On ne peut pas installer l'universel **par-dessus** un APK par processeur : son numéro interne est plus petit. Exporter ses données avant de désinstaller.
+⚠️ The universal APK cannot be installed **over** a per-processor APK: its internal number is lower. Export your data before uninstalling.

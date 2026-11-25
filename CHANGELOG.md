@@ -1,23 +1,28 @@
-# Journal des versions
+# Changelog
 
-Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) · numéros : [SemVer](https://semver.org/lang/fr/).
-Les trois dépôts ([rust](https://github.com/XERELE-MDK/ledger-mru-rust), [flutter](https://github.com/XERELE-MDK/ledger-mru-flutter), [mobile](https://github.com/XERELE-MDK/ledger-mru-mobile)) avancent avec **le même numéro**.
+Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) · numbers: [SemVer](https://semver.org/).
+The three repositories ([rust](https://github.com/XERELE-MDK/ledger-mru-rust), [flutter](https://github.com/XERELE-MDK/ledger-mru-flutter), [mobile](https://github.com/XERELE-MDK/ledger-mru-mobile)) move forward with **the same number**.
 
-> Le suivi git commence à la **1.1.3**. Les versions antérieures sont décrites ici pour mémoire : leur code n'a pas été conservé, elles n'ont donc ni étiquette ni fichiers publiés.
+> Git history starts at **1.1.3**. Earlier versions are listed for the record: their code was not kept, so they have no tag and no downloads.
+
+## [Unreleased]
+
+### Changed
+- Documentation and README are now in English.
 
 ## [1.2.0] — 2026-11-25
 
-Reprend [ledger-mru-flutter 1.2.0](https://github.com/XERELE-MDK/ledger-mru-flutter/releases/tag/v1.2.0) : soldes de départ.
-Version code : 2006 (arm64-v8a), 1006 (armeabi-v7a), 4006 (x86_64), 6 (universel).
+Ships [ledger-mru-flutter 1.2.0](https://github.com/XERELE-MDK/ledger-mru-flutter/releases/tag/v1.2.0): opening balances.
+Version codes: 2006 (arm64-v8a), 1006 (armeabi-v7a), 4006 (x86_64), 6 (universal).
 
-### Ajouté
-- Signature par une clé dédiée, si `android/key.properties` existe.
-- Documentation, compilations automatiques, licence GPL-3.0.
+### Added
+- Signing with a dedicated key, when `android/key.properties` exists.
+- Documentation, automated builds, GPL-3.0 licence.
 
 ## [1.1.3] — 2026-11-25
 
-Reprend [ledger-mru-flutter 1.1.3](https://github.com/XERELE-MDK/ledger-mru-flutter/releases/tag/v1.1.3) : livre vide, démo dans la langue du téléphone.
-Version code : 2005 (arm64-v8a), 1005 (armeabi-v7a), 4005 (x86_64), 5 (universel).
+Ships [ledger-mru-flutter 1.1.3](https://github.com/XERELE-MDK/ledger-mru-flutter/releases/tag/v1.1.3): empty book, demo in the phone's language.
+Version codes: 2005 (arm64-v8a), 1005 (armeabi-v7a), 4005 (x86_64), 5 (universal).
 
 [1.2.0]: https://github.com/XERELE-MDK/ledger-mru-mobile/releases/tag/v1.2.0
 [1.1.3]: https://github.com/XERELE-MDK/ledger-mru-mobile/releases/tag/v1.1.3

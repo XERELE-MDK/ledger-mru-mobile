@@ -1,23 +1,23 @@
-# APK et signature — mise en place
+# APKs and signing — setup
 
-[← Toutes les fonctionnalités](../README.md) · [Fonctionnement](FUNCTIONALITY.md) · [Parcours du code](CODE_WALKTHROUGH.md)
+[← All features](../README.md) · [How it works](FUNCTIONALITY.md) · [Code walkthrough](CODE_WALKTHROUGH.md)
 
-## Compiler
+## Build
 
 ```bash
 git submodule update --init
 tools/build_apks.sh
 ```
 
-## Utiliser une vraie clé
+## Using a real key
 
-Par défaut, la clé de **debug** de la machine signe. Pour une clé dédiée, créer `android/key.properties` (ignoré par git) :
+By default the machine's **debug** key signs. For a dedicated key, create `android/key.properties` (ignored by git):
 
 ```properties
-storeFile=/chemin/vers/ledger.jks
+storeFile=/path/to/ledger.jks
 storePassword=…
 keyAlias=ledger
 keyPassword=…
 ```
 
-⚠️ Changer de clé oblige à désinstaller l'app : Android refuse une mise à jour signée autrement. **Sauvegarder la clé** : la perdre empêche toute mise à jour.
+⚠️ Changing keys forces an uninstall: Android refuses an update signed differently. **Back up the key**: losing it blocks every future update.

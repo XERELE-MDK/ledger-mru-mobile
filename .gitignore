@@ -12,3 +12,6 @@ key.properties
 *.jks
 *.keystore
 android/build/
+
+# French docs: local only, they live in the Obsidian vault (symlink)
+/docs-fr
