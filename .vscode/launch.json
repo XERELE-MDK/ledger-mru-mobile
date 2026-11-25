@@ -1,0 +1,12 @@
+{
+  // F5 in VS Code, with a phone connected (USB debugging).
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Ledger — téléphone Android (USB / Wi-Fi)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart"
+    }
+  ]
+}
