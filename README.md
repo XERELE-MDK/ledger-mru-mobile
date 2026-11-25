@@ -12,6 +12,12 @@ Comptabilité personnelle en ouguiya (MRU) pour **Android 7.0 et plus**. Aucun c
 
 Les trois lisent et écrivent **le même fichier JSON** et se synchronisent par un dossier partagé, sans serveur.
 
+## Documentation
+
+- Les fonctionnalités de l'app : [ledger-mru-flutter/docs](https://github.com/XERELE-MDK/ledger-mru-flutter/tree/main/docs).
+- Ce qui est propre à Android : [**docs/**](docs/README.md) — [code partagé](docs/code-partage/FUNCTIONALITY.md) · [sélecteur de fichiers](docs/selecteur-de-fichiers/FUNCTIONALITY.md) · [dossier partagé](docs/dossier-partage/FUNCTIONALITY.md) · [icône](docs/icone/FUNCTIONALITY.md) · [confidentialité](docs/confidentialite/FUNCTIONALITY.md) · [APK et signature](docs/release/FUNCTIONALITY.md).
+- Versions : [journal](CHANGELOG.md) · [comment elles sont gérées](docs/VERSIONING.md).
+
 ## Comment ce dépôt est fait
 
 Le code Dart n'est **pas copié ici** : `app/` est un sous-module git qui pointe vers une version précise de [ledger-mru-flutter](https://github.com/XERELE-MDK/ledger-mru-flutter). `lib`, `test`, `assets` et `pubspec.yaml` sont des liens vers ce sous-module. Ce dépôt n'apporte que `android/`.
